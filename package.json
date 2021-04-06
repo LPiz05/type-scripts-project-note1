@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/LPiz05/type-scripts-project-note1/issues"
   },
-  "homepage": "https://github.com/LPiz05/type-scripts-project-note1#readme"
+  "homepage": "https://github.com/LPiz05/type-scripts-project-note1#readme",
+  "dependencies": {
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37"
+  }
 }
