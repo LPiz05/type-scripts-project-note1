@@ -1,4 +1,4 @@
-import {faster, Pokemon} from "./pokemon";
+import {faster, Pokemon} from "../pokemon";
 
 test("Pokemon a is faster than b", () => {
     const PokeA = new Pokemon("a", 25);
