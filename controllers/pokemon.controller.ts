@@ -1,4 +1,3 @@
-const chalk = require('chalk');
 
 export class Pokemon {
     name: string;
