@@ -1,13 +1,45 @@
-import {Pokemon} from "../controllers";
+import {IPokemon, Pokemon} from "../controllers";
 
-test("Pokemon B is the winner", () => {
-    const PokeA = new Pokemon("Scorplack", 65, 2, 1, 100, 50);
-    const PokeB = new Pokemon("Polaryu", 85, 2, 1, 75, 90);
-    expect(PokeA.fight(PokeB)).toBe(PokeB);
-});
+describe('Fight between two Pokemon',() => {
+    let PokeA: Pokemon;
+    let PokeB: Pokemon;
+    let PokeC: Pokemon;
 
-test("Pokemon A is the winner", () => {
-    const PokeA = new Pokemon("Letaligon", 100, 2, 1, 134, 115);
-    const PokeB = new Pokemon("Polaryu", 85, 2, 1, 75, 90);
-    expect(PokeA.fight(PokeB)).toBe(PokeA);
-});
+    beforeEach(() => {
+        PokeA = new Pokemon({
+            name: "Letaligon",
+            hp: 100,
+            level: 2,
+            base_power: 1,
+            offensive_stat: 134,
+            defensive_stat: 115
+        })
+
+        PokeB = new Pokemon({
+            name: "Polaryu",
+            hp: 85,
+            level: 2,
+            base_power: 1,
+            offensive_stat: 75,
+            defensive_stat: 90
+        })
+
+        PokeC = new Pokemon({
+            name: "Scorplack",
+            hp: 65,
+            level: 2,
+            base_power: 1,
+            offensive_stat: 100,
+            defensive_stat: 50
+        })
+    })
+
+    it("Pokemon A is the winner", async() => {
+        expect(await PokeA.fight(PokeB)).toBe(PokeA);
+    });
+
+    test("Pokemon B is the winner", async() => {
+        expect(await PokeA.fight(PokeC)).toBe(PokeC);
+    });
+
+})
